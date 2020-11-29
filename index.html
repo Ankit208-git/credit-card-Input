@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+            <form class="form-horizontal span6"></form>
+              <fieldset>
+                <legend>Payment</legend>
+                <div class="control-group">
+                  <label class="control-label">Card Number</label>
+                  <div class="controls">
+                    <div class="row-fluid">
+                    </div>
+                      <input type="text" id="block1"   maxLength="4" onkeyup="moveCursor(this,'block2')"  required>
+                      <input type="text" id="block2"   maxLength="4" onkeyup="moveCursor(this,'block3')"  required>    
+                      <input type="text" id="block3"   maxLength="4" onkeyup="moveCursor(this,'block4')" required>
+                      <input type="text" id="block4"   maxLength="4"   required>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn">Cancel</button>
+                  </div>
+                </p>
+              </fieldset>
+            </form>
+      </div>
+      <script type="text/javascript">
+        function moveCursor(fromTextBox, toTextBox){  
+          var Lenght = fromTextBox.value.lenght;
+          console.log(Lenght)
+          var maxLenght = fromTextBox.getAttribute("maxLenght")
+          if(Lenght == maxLenght){
+              document.getElementById(toTextBox).focus();
+          }
+        }
+      </script>
+</body>
+</html>
